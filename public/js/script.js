@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 
 const handleFetch = async (place) => {
-  const datajson = await fetch(`http://localhost:3000/weather?search=${place}`);
+  const datajson = await fetch(`/weather?search=${place}`);
   const d = await datajson.json();
   const text = `weather at ${d.place.name}.${d.place.country}.at time :${d.time.time}.temperature is ${d.weather.temp}.${d.weather.descr}`;
   text1.textContent = text;
